@@ -18,6 +18,10 @@ Route::get('/person', 'PersonController@index');
 Route::get('/person/find', 'PersonController@find');
 Route::post('/person/find', 'PersonController@search');
 
+Route::get('/board', 'BoardController@index');
+Route::get('/board/add', 'BoardController@add');
+Route::post('/board/add', 'BoardController@create');
+
 // use App\Http\Middleware\HelloMiddleware;
 //
 // Route::get('/hello', 'HelloController@index');
