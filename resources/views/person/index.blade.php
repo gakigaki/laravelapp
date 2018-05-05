@@ -8,16 +8,16 @@
       crossorigin="anonymous"></script>
     <script>
         function updatePerson(id) {
-            $('#id').val(id);
-            $('#form1').attr('action', 'person/update');
+            $('#form1').attr('action', 'shits/' + id);
+            $('#method').val('PUT');
             $('#name').val($('#name' + id).val());
             $('#mail').val($('#mail' + id).val());
             $('#age').val($('#age' + id).val());
             document.form1.submit();
         }
         function deletePerson(id) {
-            $('#id').val(id);
-            $('#form1').attr('action', 'person/delete');
+            $('#method').val('DELETE');
+            $('#form1').attr('action', 'shits/' + id);
             document.form1.submit();
         }
     </script>
@@ -25,10 +25,10 @@
 <body>
   <form id="form1" name="form1" action="" method="post">
     {{csrf_field()}}
-    <input type="hidden" name="id" id="id" value="" />
     <input type="hidden" name="name" id="name" value="" />
     <input type="hidden" name="mail" id="mail" value="" />
     <input type="hidden" name="age" id="age" value="" />
+    <input type="hidden" name="_method" id="method" value="" />
   </form>
   <div class="container">
 

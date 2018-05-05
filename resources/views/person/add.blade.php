@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="container">
-            <form action="add" method="post">
+            <form action="/shits" method="post">
             {{csrf_field()}}
                 <nav class="navbar navbar-default">
                     <div class="navbar-header">

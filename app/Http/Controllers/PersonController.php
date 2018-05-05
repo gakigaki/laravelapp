@@ -24,5 +24,9 @@ class PersonController extends Controller
      $param = ['input' => $request->input, 'item' => $item];
      return view('person.find', $param);
   }
+  public function add(Request $request)
+  {
+      return view('person.add');
+  }
 
 }
