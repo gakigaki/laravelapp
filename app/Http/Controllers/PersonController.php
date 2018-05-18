@@ -9,7 +9,7 @@ class PersonController extends Controller
 {
    public function index(Request $request)
    {
-       $items = Person::all();
+       $items = Person::paginate(5);
        return view('person.index', ['items' => $items]);
    }
 
