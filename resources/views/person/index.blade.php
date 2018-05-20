@@ -43,6 +43,16 @@
           <li><a href="person/add">登録</a></li>
         </ul>
       </div>
+      <div id="gnavi2" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          @if (Auth::check())
+            <p>USER: {{$user->name . ' (' . $user->email . ')'}}</p>
+          @else
+            <p>※ログインしていません。（<a href="/login">ログイン</a>｜
+            <a href="/register">登録</a>）</p>
+          @endif
+        </ul>
+      </div>
     </nav>
 
     <table class="table table-striped">

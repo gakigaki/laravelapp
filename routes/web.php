@@ -14,9 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/person', 'PersonController@index');
+Route::get('/person', 'PersonController@index')->middleware('auth');
 Route::get('/person/find', 'PersonController@find');
 Route::post('/person/find', 'PersonController@search');
+
+Route::get('person/auth', 'PersonController@getAuth');
+Route::post('person/auth', 'PersonController@postAuth');
 
 Route::get('/board', 'BoardController@index');
 Route::get('/board/add', 'BoardController@add');
@@ -30,3 +33,7 @@ Route::post('/board/add', 'BoardController@create');
 // Route::get('/hello/list', 'HelloController@list');
 // Route::post('/hello/update', 'HelloController@update');
 // Route::post('/hello/delete', 'HelloController@delete');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
